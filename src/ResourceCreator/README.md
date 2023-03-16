@@ -1,13 +1,19 @@
 ﻿# Bad Echo Resource Creator
 [![Discord](https://img.shields.io/discord/348353194801364992?style=flat-square&label=Discord&logo=discord&logoColor=white&color=7289DA)](https://discord.gg/omni) 
 
-The `BadEcho.ResourceCreator` tool is used to generate **.resources** files that contain files that we wish to bundle as resources for a program. The resulting **.resources** files created by this tool can be compiled as embedded resources and then loaded through the use of a `ResourceManager`.
+The `BadEcho.ResourceCreator` tool is used to generate resource files for assets we wish to bundle as resources for a program. The resulting **.resources** files created by this tool can then be embedded into an assembly using a language compiler, and  loaded at run-time through the use of a `ResourceManager`.
 
-Visual Studio's built-in code generator for **.resx** files fails to function correctly when it comes to embedding audio resources. Manual creation of a **.resources** file with this tool allows the loading of audio assets by a program to be both possible and fairly simple.
+Visual Studio's built-in code generator for **.resx** files fails to function correctly when it comes to embedding audio (and possibly other types of) resources. Manual creation of a **.resources** file with this tool allows the loading of audio assets by an application to be both possible and fairly simple.
 
-This is a dotnet tool, with the command name `resource-creator`.
+This package exists to aid in the development of Bad Echo applications, but is licensed under the GNU Affero General Public License so that others may enjoy it as well; see the accompanying [license](https://github.com/BadEcho/resource-creator/blob/master/LICENSE.md) for details.
 
-This package exists to be used by specific Bad Echo applications, but is licensed under the GNU Affero General Public License so that others may enjoy it as well; see the accompanying [license](https://github.com/BadEcho/core/blob/master/LICENSE.md) for details.
+## Usage
+
+`resource-creator <RESOURCES_PATH> [options]`
+
+To view detailed usage information, simply execute:
+
+`resource-creator --help`
 
 ## About Bad Echo
 Bad Echo is a collection of software technologies and [various writings](https://badecho.com) by Matt Weber: a software designer, partnered [Twitch](https://twitch.tv/omni) streamer, and game developer.
