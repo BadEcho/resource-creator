@@ -6,6 +6,7 @@
 	</PropertyGroup>
 	<Import Project="$(CoreProperties)"/>
 	<PropertyGroup>
+		<RepositoryUrl>https://github.com/BadEcho/resource-creator</RepositoryUrl>
 		<CorePath Condition="'$(CorePath)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)\src\Core\src'))</CorePath>
 	</PropertyGroup>
 </Project>
