@@ -73,6 +73,7 @@ StyleCopReport.xml
 *.pgc
 *.pgd
 *.rsp
+!Directory.build.rsp
 *.sbr
 *.tlb
 *.tli
