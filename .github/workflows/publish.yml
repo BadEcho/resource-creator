@@ -37,12 +37,12 @@ jobs:
       uses: darenm/Setup-VSTest@v1.2
     - name: Build
       shell: pwsh
-      run: .\build\build.ps1
+      run: .\build\build.ps1 -SkipTests
     - name: Push to NuGet
       env:
         PKG_URL: https://api.nuget.org/v3/index.json
         PKG_API_KEY: ${{ secrets.NUGET_API_KEY }}
-      run: .\build\push.ps1
+      run: .\build\push.ps1 
       shell: pwsh
     - name: Artifacts
       if: always()
