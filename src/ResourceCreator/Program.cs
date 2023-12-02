@@ -93,12 +93,12 @@ internal sealed class Program
     private static Argument<string> CreateResourcesArgument()
     {
         var resourcesPath
-            = new Argument<string>("RESOURCES_PATH", Strings.ResourcesPathDescription);
+            = new Argument<string>("RESOURCES_PATH", () => Environment.CurrentDirectory, Strings.ResourcesPathDescription);
 
         resourcesPath.AddValidator(result =>
                                    {
-                                       string resourcesValue = result.Tokens[0].Value;
-
+                                       string resourcesValue = result.GetValueOrDefault<string>();
+                                       
                                        if (!Directory.Exists(resourcesValue))
                                            result.ErrorMessage = Strings.ResourcesDirectoryNotFound;
                                    });
