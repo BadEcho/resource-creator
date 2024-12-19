@@ -35,9 +35,8 @@ jobs:
     - name: Fetch Last CI/CD Run Conclusion
       id: check-last-run
       run: |
-        Write-Output "LAST_RUN_CONCLUSION = $(.\build\Get-LatestWorkflowConclusion.ps1 -Owner:$Env:OWNER -Repository:$Env:REPOSITORY -Branch:$Env:BRANCH -WorkflowPath:$Env:WORKFLOW_PATH)" >> $Env:GITHUB_ENV
+        Write-Output "LAST_RUN_CONCLUSION = $(.\build\Get-LatestWorkflowConclusion.ps1 -Repository:$Env:REPOSITORY -Branch:$Env:BRANCH -WorkflowPath:$Env:WORKFLOW_PATH)" >> $Env:GITHUB_ENV
       env:
-        OWNER: ${{ github.repository_owner }}
         REPOSITORY: ${{ github.repository }}
         BRANCH: ${{ github.ref_name }}
         WORKFLOW_PATH: .github/workflows/ci.yml
