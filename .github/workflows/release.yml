@@ -48,6 +48,7 @@ jobs:
         script: core.setFailed('Cannot create a stable release for a commit that resulted in a failed CI/CD run.')
   build:
     name: Execute Build Workflow
+    needs: validate-release
     uses: ./.github/workflows/ci.yml
     with:
       release-build: true
@@ -57,7 +58,7 @@ jobs:
       NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
   create-release:
     name: Create Release
-    needs: build
+    needs: [validate-release, build]
     runs-on: windows-2022
     steps:
     - name: Checkout
