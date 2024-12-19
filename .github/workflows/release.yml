@@ -41,6 +41,7 @@ jobs:
         REPOSITORY: ${{ github.repository }}
         BRANCH: ${{ github.ref_name }}
         WORKFLOW_PATH: .github/workflows/ci.yml
+        GH_TOKEN: ${{ secrets.REPO_TOKEN }}
     - name: Fail If Last Run Unsuccessful
       if: env.LAST_RUN_CONCLUSION != 'success'
       uses: actions/github-script@v7.0.1
