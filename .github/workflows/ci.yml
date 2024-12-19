@@ -38,6 +38,8 @@ jobs:
     outputs:
       build-submodule-sha: ${{ steps.submodule-status.outputs.BUILD_SUBMODULE_SHA }}
     steps:
+    - name: TEMP FAIL
+      run: exit 1
     - name: Checkout
       uses: actions/checkout@v4
       with:
