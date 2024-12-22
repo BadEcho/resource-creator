@@ -69,6 +69,8 @@ jobs:
     - name: Setup Git User
       run: git config --global user.email "chamber@badecho.com"; git config --global user.name "Echo Chamber"
     - name: Create Release Tag
-      run: .\build\New-ReleaseTag.ps1 "${{ env.PRODUCT_NAME }}"
+      run: .\build\New-TagAndRelease.ps1 "${{ env.PRODUCT_NAME }}" "${{ github.repository }}"
+      env:
+        GH_TOKEN: ${{ secrets.REPO_TOKEN }}
     - name: Bump Version
       run: .\build\Bump-Version.ps1 ${{ github.event.inputs.component-to-increment }}
