@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/shared/">
+    <Project Path="src/Core/src/Common/BadEcho.Common.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/ResourceCreator/BadEcho.ResourceCreator.csproj" />
+  </Folder>
+</Solution>
